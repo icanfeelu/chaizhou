@@ -1,0 +1,470 @@
+#shopcart{
+    width:100%;
+}
+.top{
+    width:1200px;
+    height:104px;
+    margin:0 auto;
+    position: relative;
+
+}
+#topshow{
+    width:87px;
+    height:85px;
+    border: 1px solid black;
+    position: absolute;
+    top:26px;
+    text-align: center;
+    right:214px;
+    background-color: white;
+z-index: 999;
+    display: none;
+}
+#top_special{
+    margin:0;
+    padding:0 5px;
+}
+.top .logo_img{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 22;
+}
+.top1_span{
+    width:200px;
+    height:26px;
+    position: relative;
+    left:202px;
+    top:0;
+}
+.top1_span span{
+    margin:0 5px;
+}
+.top1{
+    position: relative;
+    width:1200px;
+    height:26px;
+    line-height:26px;
+    border-bottom:1px solid #c5c5c5;
+}
+.top1_top2{
+    width:1200px;
+    height:26px;
+}
+.nav{
+    position: absolute;
+    top:0;
+    right:0;
+}
+.nav a{
+    margin:0 5px;
+}
+#top_special{
+    background:url("../../resource/img/shopcar/topspecial.png") no-repeat left center;
+    padding-left:10px;
+}
+
+.top1 ul li{
+    float: left;
+}
+.logo{
+    position: absolute;
+    left:0;
+    top:0;
+}
+.stepby{
+    width:618px;
+    height:26px;
+    overflow: hidden;
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+.carbody{
+    width:1200px;
+    margin:30px auto 0;
+    border: 1px solid #EBEBEB;
+}
+.carbody_title{
+    width:1102px;
+    height:36px;
+    background-color: #ebebeb;
+    line-height: 36px;
+    padding-left:98px;
+}
+.carbody_title dl dt{
+    float: left;
+}
+.carbody_title dl dd{
+    float: left;
+}
+.carbody_title .qb{
+    width: 56px;
+    text-align: left;
+    color: #414141;
+    font-size: 14px;
+    font-family: "宋体";
+}
+.carbody_title .sp{
+    width: 440px;
+    text-align: center;
+    color: #414141;
+    font-size: 14px;
+    font-family: "宋体";
+}
+.carbody_title .dj{
+    width: 150px;
+    text-align: center;
+    color: #414141;
+    font-size: 14px;
+    font-family: "宋体";
+}
+.carbody_title .sl{
+    width: 100px;
+    text-align: center;
+    color: #414141;
+    font-size: 14px;
+    font-family: "宋体";
+}
+.carbody_title .je{
+    width: 192px;
+    text-align: center;
+    color: #414141;
+    font-size: 14px;
+    font-family: "宋体";
+}
+.carbody_title .cz{
+    width:58px;
+    text-align:left;
+    color: #414141;
+    font-size: 14px;
+    font-family: "宋体";
+}
+.carbody_good{
+    width:1160px;
+    padding:12px 20px 0px;
+    position: relative;
+}
+
+.carbody_good p{
+    width:1072px;
+    height:30px;
+    background-color: #ebebeb;
+    margin-left:26px;
+    line-height: 30px;
+    padding-left:46px;
+}
+/*引擎模板Box区*//*引擎模板Box区*//*引擎模板Box区*//*引擎模板Box区*/
+.carbody_good .box{
+     width:1118px;
+     height:76px;
+     margin-left:26px;
+     border-bottom: 1px solid #ccc;
+ }
+.carbody_good .space{
+    width:1118px;
+    height:400px;
+    margin-left:26px;
+    border-bottom: 1px solid #ccc;
+    background: white;
+    background:url("../../resource/img/shopcar/shopcar.jpg") no-repeat 300px 120px;
+    text-align: center;
+    line-height: 400px;
+}
+
+.carbody_good .box .box_input{
+    width:40px;
+    height:67px;
+    padding-left:40px;
+    text-align: center;
+    line-height: 67px;
+    margin-top:3px;
+}
+.carbody_good .box .good-msg img{
+    width:41px;
+    height:55px;
+    float: left;
+    margin-top:7px;
+}
+.carbody_good .box .good-msg{
+    width:476px;
+    height:66px;
+    /*margin-top:15px;*/
+}
+.carbody_good .box ul li{
+    float: left;
+    /*position: relative;*/
+}
+.carbody_good .box .box_des{
+    float: left;
+    width:391px;
+    padding-left:15px;
+    padding-top:12px;
+
+}
+.carbody_good .box .box_type{
+    float: left;
+    width:391px;
+    padding-left:15px;
+    padding-top:2px;
+}
+.carbody_good .box .box_price{
+    width:175px;
+    height:66px;
+    text-align: center;
+    line-height: 66px;
+}
+.carbody_good .box .box_count{
+    width:139px;
+    height:36px;
+    text-align: center;
+    padding-top:20px;
+    padding-left:5px;
+}
+.carbody_good .box .box_count span{
+    display: block;
+    width: 18px;
+    height: 24px;
+    border: 1px solid #ebebeb;
+    color: #000;
+    text-align: center;
+    line-height: 24px;
+    float: left;
+}
+.carbody_good .box .box_count input{
+    width: 30px;
+    height: 22px;
+    border-top: solid 1px #ebebeb;
+    border-right: none;
+    border-bottom: solid 1px #ebebeb;
+    border-left: none;
+    text-align: center;
+    font-size: 12px;
+    font-family: "宋体";
+    line-height: 24px;
+    float: left;
+    outline-style: none;
+}
+.carbody_good .box .box_all{
+    width:90px;
+    height:66px;
+    text-align: center;
+    line-height: 66px;
+}
+.carbody_good .box .box_do{
+    width:30px;
+    height:66px;
+    padding-top:14px;
+    text-align: center;
+    margin-left:45px;
+}
+.carbody_good .box .box_do .cutcut{
+    cursor: pointer;
+    color: #cccccc;
+}
+#box_cut{
+    color: #a6a6a6;
+    font-size: 12px;
+}
+/*引擎模板Box区*//*引擎模板Box区*//*引擎模板Box区*//*引擎模板Box区*/
+.payfor{
+    margin:0 auto;
+    width:1154px;
+    height:171px;
+    padding-left:46px;
+    /*background-color: pink;*/
+    position: relative;
+    border-top:1px solid #ccc;
+}
+.payfor .payforPic1{
+    position: absolute;
+    top:18px;
+    left:85px;
+}
+.payfor .payforPic2{
+    position: absolute;
+    top: 35px;
+    left: 223px;
+}
+.payfor .payforPart{
+    position: absolute;
+    top: 40px;
+    right:0;
+    margin-right:38px;
+}
+.payforPart .payforpart_span2{
+    color: #d90075;
+    font-weight: 700;
+}
+.payforPart .payforpart_span3{
+    text-align: right;
+    font-size: 12px;
+    font-family: "宋体";
+    line-height: 30px;
+    color: #555;
+    font-weight: bold;
+}
+.payforPart .payforpart_span4{
+    color: #d60076;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: Arial,Helvetica,sans-serif;
+}
+.payfor .payfor_submit_span{
+    display: block;
+    width:226px;
+    height:48px;
+    color: #fff;
+    text-align: center;
+    font-size: 22px;
+    line-height: 48px;
+    background-color: #EB0067;
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-family: "微软雅黑",Arial,Times;
+}
+
+.rexiao{
+    width:1198px;
+    border: #EBEBEB 1px solid;
+    height:520px;
+    margin:40px auto 0;
+}
+.rexiao h3{
+    font-family: '微软雅黑';
+    font-size:20px;
+    height:39px;
+    line-height: 39px;
+    border-bottom: #EBEBEB 1px solid;
+    padding-left:46px;
+}
+.rexiao_t{
+    height:480px;
+    position: relative;
+    top:0;
+    left:0;
+}
+
+#huanyizu {
+    display: block;
+    width: 68px;
+    height: 24px;
+    position: absolute;
+    bottom: 40px;
+    left:50%;
+    margin-left:-34px;
+    border: #EBEBEB 1px solid;
+    text-align: center;
+    line-height: 24px;
+}
+.rexiao_t ul{
+    height:381px;
+    width:1169px;
+    overflow: hidden;
+    padding-left:31px;
+}
+/*模板引擎模板引擎模板引擎模板引擎模板引擎模板引擎模板引擎模板引擎模板引擎*/
+.rexiao_t ul li{
+    width:184px;
+    height:337px;
+    /*border:1px solid pink;*/
+    margin:22px;
+    list-style: none;
+    float: left;
+}
+.rexiao_t ul li img{
+    width:184px;
+    display: block;
+    /*margin-bottom:20px;*/
+}
+.rexiao_t ul li a{
+    display: block;
+    width:170px;
+    height:23px;
+    padding: 7px;
+    padding-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    font-size:12px;
+    text-decoration: none;
+    line-height: 23px;
+}
+.rexiao_t ul li p{
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+.rexiao_t .gary{
+    background:#f0f2f1;
+}
+.rexiao_t .change{
+    color: rgb(217, 0, 119);
+    font-size: 12px;
+    font-weight: bold;
+    margin:0 5px;
+}
+.rexiao_t .through{
+    color:#ccc;
+    font-size:14px;
+    text-decoration: line-through;
+    margin:0 5px;
+}
+.rexiao_t .click{
+    margin-left:48px;
+    display: block;
+    width:79px;
+    height:20px;
+    border: 1px solid #EB0067;
+    color: #EB0067;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+#hhh33{
+    border-bottom: #EBEBEB 1px solid;
+}
+/*模板引擎模板引擎模板引擎模板引擎模板引擎模板引擎模板引擎模板引擎模板引擎*/
+#bottom{
+    width:100%;
+    position: relative;
+    float: left;
+    margin-top:50px;
+}
+.bottom1{
+    width:1200px;
+    height:200px;
+    margin:0 auto;
+    background-color: #ececec;
+    position: relative;
+    top:442px;
+}
+.bottom1 dl{
+    display: inline-block;
+    padding:0 40px;
+    vertical-align: top;
+    margin-top:10px;
+}
+.bottom1 dl dt{
+    font-weight: bold;
+    color: black;
+}
+.bottom2{
+    padding-top:15px;
+    text-align: center;
+    position: relative;
+    top:447px;
+}
+.bottom2 img{
+    padding:0 16px;
+    display: inline-block;
+}
+.bottom3{
+    text-align: center;
+    margin-top:40px;
+    position: relative;
+    top:447px;
+}

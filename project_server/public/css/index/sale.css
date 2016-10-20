@@ -1,0 +1,28 @@
+#saleb,#salem,#salet{
+    width:100%;
+    position:relative;
+}
+#salet div{
+    width:1200px;
+    margin:20px auto 0;
+}
+#salem{
+    height:920px;
+}
+#salem .salem1{
+     width:1200px;
+     margin:70px auto 0;
+ }
+#salem .salemSpan1,#salem .salemSpan2{
+    display: block;
+    display: none;
+}
+#salem .salemSpan2 img,#salem .salemSpan1 img{
+    width:88px;
+    height:165px;
+
+}
+#saleb div{
+     width:1200px;
+     margin:20px auto 0;
+ }

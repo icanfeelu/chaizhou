@@ -1,0 +1,172 @@
+#login_container{
+    width:100%;
+    background-color: #cecccf;
+}
+#top{
+    width:1017px;
+    margin:0 auto;
+}
+#middle{
+    width:1017px;
+    height:516px;
+    margin:0 auto;
+    background-color:white;
+}
+#midpic{
+    margin-top:25px;
+    margin-left:84px;
+    float: left;
+
+}
+#login_right{
+    float: left;
+}
+#spandiv{
+     width:264px;
+     height:52px;
+     margin:7px 0 0 66px;
+     padding: 0 66px 0 70px;
+ }
+#spandiv span{
+    display: inline-block;
+    height:33px;
+    padding-top:19px;
+    color: #9f9f9f;
+    font-size: 12px;
+}
+#spandiv .login_span.focus{
+    color:black;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+#username,#password{
+    width:398px;
+    height:67px;
+    position: relative;
+}
+.name-label{
+    display: inline-block;
+    height:44px;
+    width:44px;
+    background:url(../../resource/img/login/loginbg.png) no-repeat left top;
+    background-position: -7px -48px;
+    position:absolute;
+    top:0px;
+    left:37px;
+
+
+}
+.name-label{
+    display: inline-block;
+    height:44px;
+    width:44px;
+    background:url(../../resource/img/login/loginbg.png) no-repeat left top;
+    background-position: -7px -48px;
+    position:absolute;
+    top:0px;
+    left:37px;
+}
+.pwd-label{
+    display: inline-block;
+    height:44px;
+    width:44px;
+    background:url(../../resource/img/login/loginbg.png) no-repeat left top;
+    background-position: -7px -94px;
+    position:absolute;
+    top:0px;
+    left:37px;
+}
+.name-span{
+    display: inline-block;
+    height:16px;
+    width:16px;
+    background:url(../../resource/img/login/suregou.jpg) no-repeat left top;
+    position:absolute;
+    top:14px;
+    right:14px;
+    display:none;
+}
+.pwd-name{
+    display: inline-block;
+    height:16px;
+    width:16px;
+    background:url(../../resource/img/login/suregou.jpg) no-repeat left top;
+    position:absolute;
+    top:14px;
+    right:14px;
+    display: none;
+}
+#name_div{
+    margin-left:40px;
+    background:url(../../resource/img/login/pwd-error.jpg) no-repeat left 4px;
+    color: #e20263;
+    font-size:12px;
+    padding-left:24px;
+    display: none;
+}
+#pwd_div{
+    margin-left:40px;
+    background:url(../../resource/img/login/pwd-error.jpg) no-repeat left 4px;
+    color: #e20263;
+    font-size:12px;
+    padding-left:24px;
+    display: none;
+}
+
+
+#login_midninput{
+    border:1px solid #c5c5c5;
+    width:398px;
+    height:303px;
+    float: left;
+    margin-left:66px;
+    padding-top:27px;
+}
+#login_midninput input{
+    width:288px;
+    height:40px;
+    border: 1px solid #c5c5c5;
+    border-radius: 3px;
+    line-height: 40px;
+    padding-left:40px;
+    margin-left:36px;
+}
+#login_midninput button{
+    margin-top:12px;
+    width:328px;
+    height:40px;
+    color: white;
+    font-size:14px;
+    background-color: #e30165;
+    border: none;
+    border-radius: 3px;
+    margin-left:36px;
+}
+#login_midninput #a1{
+    color: #666666;
+    font-size: 12px;
+    margin-left:36px;
+    display: inline-block;
+}
+#login_midninput #a2{
+    color: #e50065;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left:268px;
+    display: inline-block;
+}
+#login_midninput ul{
+    height:39px;
+    line-height:39px;
+    margin-left:36px;
+    margin-top:18px;
+}
+#login_midninput ul li{
+    margin-right:10px;
+    float: left;
+}
+
+#bottom{
+    margin-top:78px;
+    text-align: center;
+}
