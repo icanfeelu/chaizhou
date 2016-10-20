@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+    <link rel="stylesheet" href="iconfont/iconfont.css" />
+	<link rel="stylesheet" href="alliconfont/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/classify1.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <title>模板</title>
+    <link rel="stylesheet" href="">
+</head>
+	<style>
+		*{
+			font-family: "幼圆";
+		}
+	</style>
+<body>
+    <header>
+    	<div><a class="iconfont" href="javascript:history.go(-1)">&#xe619;</a>ZXIU 走秀网</div>
+    	<div id="search"><span class="iconfont">&#xe627;</span><input type="text" placeholder="请输入搜索内容" /></div>
+    </header>
+    <section>
+    	<div class="swiper-container listCont">
+    		<div class="swiper-wrapper listWrapper">
+    			
+    		</div>
+    	</div>
+    	<div class="swiper-container classCont1">
+    		<div class="swiper-wrapper classWrapper1">
+    			<!--<div class="swiper-slide classslide"></div>
+    			<div class="swiper-slide classslide"></div>
+    			<div class="swiper-slide classslide"></div>
+    			<div class="swiper-slide classslide"></div>
+    			<div class="swiper-slide classslide"></div>
+    			<div class="swiper-slide classslide"></div>
+    			<div class="swiper-slide classslide"></div>
+    			<div class="swiper-slide classslide"></div>
+    			<div class="swiper-slide classslide"></div>
+    			<div class="swiper-slide classslide"></div>-->
+    		</div>
+    	</div>
+    	<div class="swiper-container proCont1">
+    		<div class="swiper-wrapper proWrapper1">
+    			<div class="swiper-slide proListslide1">
+    				<div class="swiper-container proCont2">
+    					<div class="swiper-wrapper proWrapper2"></div>
+    				</div>
+    			</div>
+    			<div class="swiper-slide proListslide1">
+    				<div class="swiper-container proCont2">
+    					<div class="swiper-wrapper proWrapper2"></div>
+    				</div>
+    			</div>
+    			<div class="swiper-slide proListslide1">
+    				<div class="swiper-container proCont2">
+    					<div class="swiper-wrapper proWrapper2"></div>
+    				</div>
+    			</div>
+    			<div class="swiper-slide proListslide1">
+    				<div class="swiper-container proCont2">
+    					<div class="swiper-wrapper proWrapper2"></div>
+    				</div>
+    			</div>
+    			<div class="swiper-slide proListslide1">
+    				<div class="swiper-container proCont2">
+    					<div class="swiper-wrapper proWrapper2"></div>
+    				</div>
+    			</div>
+    			<div class="swiper-slide proListslide1">
+    				<div class="swiper-container proCont2">
+    					<div class="swiper-wrapper proWrapper2"></div>
+    				</div>
+    			</div>
+    			<div class="swiper-slide proListslide1">
+    				<div class="swiper-container proCont2">
+    					<div class="swiper-wrapper proWrapper2"></div>
+    				</div>
+    			</div>
+    			<div class="swiper-slide proListslide1">
+    				<div class="swiper-container proCont2">
+    					<div class="swiper-wrapper proWrapper2"></div>
+    					
+    				</div>
+    			</div>
+    			<div class="swiper-slide proListslide1">
+    				<div class="swiper-container proCont2">
+    					<div class="swiper-wrapper proWrapper2"></div>
+    					
+    				</div>
+    			</div>
+    			<div class="swiper-slide proListslide1">
+    				<div class="swiper-container proCont2">
+    					<div class="swiper-wrapper proWrapper2"></div>
+    					
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	
+    </section>
+	<footer>	
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe63c;</span><span>首页</span></div>
+		<div class="footerDiv"><div class="focus"></div><span class="iconfont">&#xe68c;</span><span>分类</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe639;</span><span>购物车</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe64f;</span><span>我的秀</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe647;</span><span>更多</span></div>		
+	</footer>
+    <script src="" type="text/javascript"></script>
+    <script src="js/app.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/jquery-1.12.1.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+    	$(function(){
+    		//footer部分点击切换
+    		$("footer div:nth-of-type(1)").click(function(){
+    			location.href="index.html"
+    		})
+    		$("footer div:nth-of-type(3)").click(function(){
+    			location.href="shopcar.html"
+    		})
+    		$("footer div:nth-of-type(4)").click(function(){
+    			location.href="login&register.html"
+    		})
+    		$("footer div:nth-of-type(5)").click(function(){
+    			location.href="more.html"
+    		})
+    		var listIndex; 
+    		//获取class类名,商品类名
+    		$.ajax({
+    			type:"get",
+    			url:"http://datainfo.duapp.com/shopdata/getclass.php",
+    			async:true,
+    			success:function(data){
+    				var htmStr = "";
+    				//添加列表
+    				var className = JSON.parse(data);
+    				for(var i =0;i<className.length;i++){
+//  					
+    					htmStr += 
+    					'<div class="swiper-slide Listslide" classID="'
+    					+ className[i].classID +'"><span>'+className[i].className+'</span><span>></span></div>';
+    				}
+    				$(".listWrapper").html(htmStr);
+    				//列表数据
+    				var mySwiper = new Swiper(".listCont",{
+		    			direction : 'vertical',
+		    			slidesPerView : 'auto',//'auto'
+		    			tap:true,
+		    			onTap:function(swiper){
+		    				listIndex = mySwiper.activeIndex;
+		    			}
+		    		})			
+		    		//点击list获取商品信息
+					$(".listWrapper .Listslide").click(function(){
+						$(".listCont").hide();
+						$(".classCont1").show();
+						$(".proCont1").show();
+						var cutIndex = $(this).index();
+						var htmStr = "";
+						console.log(cutIndex)
+						$.ajax({
+							type:"get",
+							url:"http://datainfo.duapp.com/shopdata/getclass.php",
+							async:true,
+							success:function(data){
+//								console.log(data)
+								var Data  = JSON.parse(data);
+								console.log(Data[1].classID)
+								for(var i = 0;i<Data.length;i++){
+									htmStr +='<div class="swiper-slide classslide" classID = "'+Data[i].classID+'">';
+									
+									htmStr +='<span class="iconfont">'+Data[i].icon+'</span>'
+									htmStr +='</div>';
+									
+								}
+								$(".classWrapper1").html(htmStr);
+								
+								var classSwiper = new Swiper(".classCont1",{
+									slidesPerView : "auto",
+								})
+								
+								var proSwiper1 = new Swiper(".proCont1",{
+									onSlideChangeStart: function(swiper){
+//								      console.log(proSwiper1.activeIndex);
+								      var a = $(".classslide").eq(proSwiper1.activeIndex).attr("classID");
+//								      console.log($(".proWrapper2").eq(proSwiper1.activeIndex).html())
+//								      console.log(typeof $(".proWrapper2").eq(proSwiper1.activeIndex).html())
+								      if($(".proWrapper2").eq(proSwiper1.activeIndex).html()===""){
+								      	 proDetail(a,proSwiper1.activeIndex);
+								      }
+								     
+								      $(".classslide").removeClass("active");
+								      
+								      $(".classslide").eq(proSwiper1.activeIndex).addClass("active");
+								    }
+								})
+								$(".classslide").eq(cutIndex).addClass("active");
+								var a = $(".classslide").eq(cutIndex).attr("classID");
+								proDetail(a,cutIndex)
+								proSwiper1.slideTo(cutIndex,1000);
+								//导航icon点击事件
+								$(".classslide").click(function(){
+									$(".classslide").removeClass("active");
+									$(this).addClass("active");
+									var clickIndex = $(this).index();
+//									var clickgoodsID  = $(this).attr("classID");							
+									proSwiper1.slideTo(clickIndex,1000);
+//									proDetail(clickgoodsID,clickIndex);
+									
+									
+									
+								})
+							},
+							error:function(error){
+								
+							}
+						});
+						
+						//函数--添加商品信息
+						function proDetail(classID,index){
+							$.ajax({
+							type:"get",
+							url:"http://datainfo.duapp.com/shopdata/getGoods.php",
+							async:true,
+							data:{
+								classID: classID
+							},
+							dataType:'JSONP',
+							success:function(data){
+								console.log(data)
+								var htmStr1 = "";
+//								var Data  = JSON.parse(data);
+								for(var i = 0;i<data.length;i++){
+									var currntPrice = parseInt(data[i].price*data[i].discount/10);
+									htmStr1 +='<div class="swiper-slide proListslide2">';
+	    							htmStr1 +='<img src="'+data[i].goodsListImg+'"/>';
+	    							htmStr1 +='<h5>'+data[i].goodsName+'</h5>';
+	    							htmStr1 +='<div><span> ¥ '+currntPrice+'</span><span> ¥ '+data[i].price+'</span></div></div>';
+								}
+								
+								$(".proWrapper2").eq(index).html(htmStr1);
+								var proSwiper = new Swiper(".proCont2",{
+									direction : 'vertical',
+									slidesPerView:"4",
+								})
+//									
+							},
+							error:function(error){
+								
+							}
+						});
+						}
+						
+						
+						
+						
+						
+					})
+			},
+				error:function(error){
+					console.log(error);
+				}
+			});
+				
+				
+				
+    	});
+
+    </script>
+</body>
+
+</html>

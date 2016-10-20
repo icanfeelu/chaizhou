@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body, html {
+  width: 100%;
+  height: 100%;
+  border: 0; }
+
+#container {
+  width: 100%;
+  height: 100%; }
+#container header {
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0; }
+#container header div:nth-of-type(1) {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e4366b; }
+#container header div:nth-of-type(1) a {
+  display: inline-flex;
+  width: 33%;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none; }
+#container header div:nth-of-type(1) i {
+  width: 33%;
+  font-style: inherit;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold; }
+#container header div:nth-of-type(1) button {
+  width: 3rem;
+  height: 1.25rem;
+  color: white;
+  background: url(../img/main/botton1.jpg) repeat;
+  box-shadow: 0 0 4px 0 #808080;
+  border: none;
+  border-radius: 8px;
+  margin-right: 10px; }
+#container header div:nth-of-type(2) {
+  width: 100%;
+  height: 45px;
+  background: #333333;
+  color: white;
+  font-size: 15px;
+  line-height: 45px; }
+#container header div:nth-of-type(2) p {
+  margin-left: 10px; }
+#container section {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 90px;
+  bottom: 50px;
+  background: #f3f4f6; }
+#container section .pageCont {
+  width: 100%;
+  height: 100%; }
+#container section .pageCont .page1 {
+  background: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+#container section .pageCont .page1 img {
+  width: 60%;
+  height: 50%;
+  margin-top: 10%; }
+#container section .pageCont .page1 h4{
+  display: inline-flex;
+  flex-flow: row nowrap;
+  color: white;
+  margin-top: 10%;
+  width: 80%;
+  height: 4.2rem;
+  line-height: 4.2rem;
+  background: url(../img/pro/pro1.png) no-repeat center center;
+  background-size: 100%; }
+#container section .pageCont .page1 h4 span:nth-of-type(1) {
+  width: 40%;
+  height: auto;
+  display: inline-flex;
+  justify-content: space-around; }
+#container section .pageCont .page1 h4 span:nth-of-type(2) {
+  display: inline-flex;
+  width: 55%;
+  margin-right: 5%;
+  height: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+#container section .pageCont .page1 p {
+  width: 80%;
+  height: auto;
+  margin-top: 10%;
+  font-size:0.65rem;
+  display: inline-flex;
+  justify-content: space-between; }
+#container section .pageCont .page1 p span {
+  width: 33.3%; }
+#container section .pageCont .page1 p span:nth-of-type(1) i {
+  text-decoration: line-through;
+  color: #cccccc; }
+#container section .pageCont .page1 p span:nth-of-type(2) {
+  width: 30%;
+  margin-left: 3.33%; }
+#container section .pageCont .page1 p span:nth-of-type(3) {
+  text-align: right; }
+#container section .pageCont .page2 {
+  background: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow-y: auto; }
+#container section .pageCont .page2 img {
+  width: 100%;
+  height: auto; }
+#container section .pageCont .page2 div {
+  width: 100%;
+  height: auto; }
+#container section .pageCont .page2 div p {
+  width: 90%;
+  height: auto; 
+  font-size: 0.8rem;}
+#container section .pageCont .page3 {
+  background: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+#container section .pageCont .page3 .pageCont11 {
+  width: 100%;
+  height: 80%;
+  position: relative;
+  margin-top:5%; }
+#container section .pageCont .page3 .pageCont11 .swiper-slide {
+  width: 100%;
+  height: 100%; }
+#container section .pageCont .page3 .pageCont11 .swiper-slide img {
+  width: 80%;
+  height: 100%; 
+  margin-left:10%;}
+#container section .pageCont .page3 .swiper-pagination2 {
+  font-size: 1.25rem;
+  
+  color: white; 
+  position: absolute;
+  bottom: 0;
+  }
+#container section .swiper-pagination1 {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #484850; }
+#container section .swiper-pagination1 .cusClass {
+  border-radius: 0;
+  width: 33.3%;
+  height: 100%;
+  background: #000000;
+  color: white;
+  line-height: 50px;
+  font-size: 0.65rem; }

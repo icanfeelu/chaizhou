@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" href="css/swiper.min.css" /> 
+	<link rel="stylesheet" href="css/startSlider.css" />
+    <title>start-area</title>
+</head>
+
+<body>
+    <div class="swiper-container">
+    	<div class="swiper-slide" id="start"><img src="img/2.jpg" alt="" /></div>
+        <div class="swiper-wrapper">            
+            <div class="swiper-slide"><img src="img/3.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img/4.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img/5.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img/6.jpg" alt="" /></div>
+        </div>
+    </div>
+	<script src="js/jquery-1.12.1.js"></script>
+	<script src="js/swiper.min.js"></script>
+    <script type="text/javascript">	
+		var swiper = new Swiper('.swiper-container',{
+			onClick: function(swiper){
+				if(swiper.activeIndex===3)
+		      		location.href="main.html"
+		   },
+		});
+		
+    </script>
+</body>
+
+</html>

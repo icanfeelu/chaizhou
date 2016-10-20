@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 图标 -->
+	<link rel="stylesheet" href="alliconfont/iconfont.css" />
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <title>模板</title>
+    <link rel="stylesheet" href="">
+</head>
+	<style>
+		*{
+			font-family: "幼圆";
+		}
+	</style>
+<body>
+    <header>
+    	<div>ZXIU 走秀网</div>
+    	<div id="search"><span class="iconfont">&#xe627;</span><input type="text" placeholder="请输入搜索内容" /></div>
+    </header>
+    <section>
+    	<div class="swiper-container listCont">
+    		<div class="swiper-wrapper listWrapper">
+    			<div class="swiper-slide bannerslide">
+    				<div class="swiper-container bannerCont">
+    					<div class="swiper-wrapper">
+    						<div class="swiper-slide"><img src="" alt="" /></div>
+    						<div class="swiper-slide"><img src="" alt="" /></div>
+    						<div class="swiper-slide"><img src="" alt="" /></div>
+    						<div class="swiper-slide"><img src="" alt="" /></div>
+    					</div>
+    					<div class="swiper-pagination"></div>
+    				</div>
+    			</div>
+    			<!--<div class="swiper-slide">111</div>
+    			<div class="swiper-slide">222</div>
+    			<div class="swiper-slide">333</div>
+    			<div class="swiper-slide">444</div>
+    			<div class="swiper-slide">555</div>-->
+    		</div>
+    	</div>
+    </section>
+	<footer>	
+		<div class="footerDiv"><div class="focus"></div><span class="iconfont">&#xe63c;</span><span>首页</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe68c;</span><span>分类</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe639;</span><span>购物车</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe64f;</span><span>我的秀</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe647;</span><span>更多</span></div>		
+	</footer>
+    <script src="" type="text/javascript"></script>
+    <script src="js/app.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/jquery-1.12.1.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script>
+    	$(function(){
+    		
+    		
+    		
+    		
+    		//获取banner pic
+    		$.ajax({
+    			type:"get",
+    			url:"http://datainfo.duapp.com/shopdata/getBanner.php",
+    			async:true,
+    			dataType:"JSONP",
+    			success:function(data){
+    				
+    				for(var i=0;i<4;i++){
+    					var a = JSON.parse(data[i].goodsBenUrl);
+    					$(".bannerCont img").eq(i).attr("src",a[0]);
+    				}
+    			},
+    			error:function(error){
+    				console.log(error);
+    			}
+    		});
+    		var bannerSwiper = new Swiper(".bannerCont",{
+    			direction : "horizontal",
+    			pagination : '.swiper-pagination',
+				paginationType : 'bullets',
+				autoplay : 2000,
+				speed:1000,
+//				freeMode : true,
+    		})
+    		//获取商品详情
+    		$.ajax({
+    			type:"get",
+    			url:"http://datainfo.duapp.com/shopdata/getGoods.php",
+    			dataType:"JSONP",
+    			success:function(data){
+    				var len = data.length;
+    				console.log(len)
+    				var htmlstring ="";
+					for(var i = 0;i<len;i++){
+						var a;
+						if(data[i].discount == 0){
+							a = data[i].price;
+						}else{
+							a = parseInt(data[i].price*data[i].discount/10);
+						}
+//						var a = parseInt(data[i].price*data[i].discount/10);
+						htmlstring +="<div class='swiper-slide'goodsid ='"+data[i].goodsID+"'>";
+						htmlstring +="<div class='listL'><img src='"+data[i].goodsListImg+"'/></div>";
+						htmlstring +='<div class="listR"><p>'+data[i].goodsName+'</p>';
+						htmlstring +='<div><span>'+a+'</span>';
+						htmlstring +='<span>折扣: '+data[i].discount+'</span></div>';
+						htmlstring +='<div>'+data[i].price+'<img src="img/main/shopcart.jpg"/></div>';
+						htmlstring +='</div></div>';
+					}
+					$('.listWrapper').append(htmlstring);
+					
+					var listSwiper = new Swiper(".listCont",{
+		    			direction:"vertical",
+		    			slidesPerView :"auto",
+		    		})
+					
+					$('.swiper-slide').click(function(){
+						
+						var Index = $(this).attr("goodsid");
+						console.log(Index);
+						sessionStorage.setItem("goodsID",Index);
+						location.href="prodetial.html";
+				    })
+    				
+    			},
+    			error:function(XMLHttpRequest,textStatus,errorThrown){
+    				console.log("XMLHttpRequest:"+XMLHttpRequest);
+    				console.log("textStatus:" + textStatus);
+    				console.log("errorThrown:"+ errorThrown );
+    			}
+    		});
+    		
+    		//footer部分点击切换
+    		$("footer .footerDiv:nth-of-type(2)").click(function(){
+    			location.href="classify1.html"
+    		})
+    		$("footer .footerDiv:nth-of-type(3)").click(function(){
+    			location.href="shopcar.html"
+    		})
+    		$("footer .footerDiv:nth-of-type(4)").click(function(){
+    			location.href="login&register.html"
+    		})
+    		$("footer .footerDiv:nth-of-type(5)").click(function(){
+    			location.href="more.html"
+    		})
+    	})
+    </script>
+</body>
+
+</html>
