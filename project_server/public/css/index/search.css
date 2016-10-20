@@ -1,0 +1,64 @@
+#search{
+    width:100%;
+    height:132px;
+
+}
+#search1{
+    width:1200px;
+    height:132px;
+    margin:0 auto;
+}
+#search1 #search3{
+    padding-top:47px;
+    float: left;
+}
+
+#search2{
+    height:132px;
+    width:540px;
+    float: left;
+    margin-left:69px;
+}
+
+#search2 input{
+    border:2px solid #e50163;
+    width:449px;
+    height:31px;
+    margin-top:47px;
+    color:#b9b9b9;
+    float: left;
+    outline-style: none;
+}
+#search2 button{
+    width:87px;
+    height:37px;
+    background:#e50163;
+    color:white;
+    font-size:17px;
+    border: none;
+    margin-top:47px;
+    float: left;
+    outline-style: none;
+}
+#search2 ul li{
+    float: left;
+    margin-top:7px;
+}
+#search2 ul li a{
+    padding:0 5px 0 5px;
+    font-size:12px;
+    color:#9c9d9f;
+    border-left:1px solid #e3e3e3;
+
+}
+
+#search2 ul li #search_a{
+    color:red;
+    border: none;
+}
+#search1 #search4{
+    float:right;
+    padding-right:28px;
+    padding-top:28px;
+}
+

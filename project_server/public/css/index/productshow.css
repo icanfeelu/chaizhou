@@ -1,0 +1,229 @@
+#productshow{
+    width:100%;
+    margin-top:70px;
+}
+.hotsale{
+    margin:0 auto;
+    width:1200px;
+    position: relative;
+}
+.hotsale span{
+    display: block;
+    width:103px;
+    height:26px;
+
+}
+.hotsale .span1{
+    position: absolute;
+    bottom:18px;
+    left: 440px;
+}
+.hotsale .span2{
+    position: absolute;
+    bottom:18px;
+    left: 550px;
+}
+.hotsale .span3{
+    position: absolute;
+    bottom:18px;
+    left: 655px;
+}
+.hotsalePic{
+    width:1200px;
+    height:804px;
+    margin:0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.hotsalePic1{
+    position: absolute;
+    top:0;left:0;
+}
+.weeknew{
+    width:1200px;
+    height:110px;
+    margin:0 auto;
+}
+.weeknewslider{
+    width:1200px;
+    height:730px;
+    margin:0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.weeknewsliderpic{
+    position: absolute;
+    top:0;
+    left:0;
+    opacity:0;
+}
+.opai{
+    opacity: 1;
+}
+.weeknewslider_span1{
+    position: absolute;
+    left:0;
+    top:50%;
+    margin-top:-44px;
+    z-index: 99;
+    opacity: 0.2;
+}
+.weeknewslider_span2{
+    position: absolute;
+    right:15px;
+    top:50%;
+    margin-top:-44px;
+    z-index: 99;
+    opacity: 0.2;
+}
+.weeknewslider .weeknew_coin{
+    position: absolute;
+    bottom: 80px;
+    right:250px;
+}
+.weeknewslider .weeknew_coin a{
+    display: inline-block;
+    width:15px;
+    height:15px;
+    border-radius:  50%;
+    background-color: #ccc;
+}
+
+.active .active_img,.active .active_img1{
+    width:1200px;margin:0 auto;
+}
+.active .active_img1 img{
+    float: left;
+}
+.laddypart .laddypart_top{
+    width:1200px;margin:10px auto 0;
+    position:relative;
+}
+.manpart .laddypart_top{
+    width:1200px;margin:10px auto 0;
+    position:relative;
+}
+.youxuan .laddypart_top{
+    width:1200px;margin:10px auto 0;
+    position:relative;
+}
+.reshou .laddypart_top{
+    width:1200px;margin:10px auto 0;
+    position:relative;
+}
+#modelcontainer{
+    width:1200px;
+    margin:0 auto;
+}
+.gussyoulike .laddypart_top{
+    width:1200px;margin:0 auto;
+    position:relative;
+}
+#BIgbox .box{
+    margin-right:5px;
+    margin-bottom:5px;
+    width:229px;
+    height:363px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #B0A58F;
+}
+#BIgbox .box.focus{
+    border: 1px solid red;
+}
+#BIgbox .box img{
+    font-family:"微软雅黑";
+    display: block;
+    width:229px;
+}
+#BIgbox .box p span{
+    font-size:20px;
+    color:#F14812;
+    font-weight: bold;
+}
+#BIgbox .box p{
+    width:229px;
+    height:15px;
+
+    text-align: center;
+    padding-top:5px;
+    margin:0
+}
+#BIgbox .box p a{
+    display: block;
+    width:229px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    font-size:12px;
+}
+#bottom{
+    width:100%;
+    float: left;
+    margin-top:50px;
+}
+.bottom1{
+    width:1200px;
+    height:200px;
+    margin:0 auto;
+    background-color: #ececec;
+}
+.bottom1 dl{
+    display: inline-block;
+    padding:0 40px;
+    vertical-align: top;
+    margin-top:10px;
+}
+.bottom1 dl dt{
+    font-weight: bold;
+    color: black;
+}
+.bottom2{
+    padding-top:15px;
+    text-align: center;
+}
+.bottom2 img{
+    padding:0 16px;
+    display: inline-block;
+}
+.bottom3{
+    text-align: center;
+    margin-top:40px;
+}
+.bottom4{
+    text-align: center;
+    margin-top:40px;
+}
+.bottom4 img{
+    padding:0 6px;
+    display: inline-block;
+}
+.bottom5{
+    width:100%;
+    height:30px;
+}
+.friendlink{
+    line-height: 28px;
+    width: 980px;
+    height:28px;
+    border-bottom: 1px dashed #CDCDCD;
+    border-top: 1px dashed #CDCDCD;
+    margin:60px auto 10px;
+    position: relative;
+    overflow: hidden;
+   }
+.friendlink_span{
+    width:70px;
+    float: left;
+    margin-left: 60px;
+}
+.friendlink_ul {
+    float: left;
+    position:relative;
+    top:0;
+    left:0;
+}
+.friendlink_ul a{
+    padding:0 3px;
+}
+

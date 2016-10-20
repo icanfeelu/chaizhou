@@ -1,0 +1,63 @@
+#top{
+    width:100%;
+    height:26px;
+    border-bottom:1px solid #ededed;
+    background-color:#f6f6f6;
+
+}
+#top1{
+    width:1200px;
+    height:26px;
+    background-color:#f6f6f6;
+    line-height: 26px;
+    margin:0 auto;
+
+}
+#top1 ul li{
+    float:left;
+}
+#top1 ul li a{
+    padding:0 10px 0 10px;
+    border-right: 1px solid #d4d4d4;
+}
+#top1 ul li #user-login-name{
+    padding-left:600px;
+}
+#top1 ul li #topa1{
+    background:url("../../resource/img/index/topsearch/top1.png") no-repeat 10px 0;
+    padding-left:20px;
+
+}
+#top1 ul li #topa2{
+    background:url("../../resource/img/index/topsearch/top2.png") no-repeat right 0;
+    padding-right: 20px;
+    border: none;
+}
+
+.topweixin,.topweibo,.topphone{
+    position: relative;
+}
+.topweixin img,.topweibo img,.topphone img {
+    width:150px;
+}
+.topweixin1{
+    position:absolute;
+    top: 27px;
+    left: -36px;
+    display: none;
+    z-index: 222;
+}
+.topweibo1{
+    position:absolute;
+    top: 27px;
+    left: -36px;
+    display: none;
+    z-index: 222;
+}
+.topphone1{
+    position:absolute;
+    top: 27px;
+    left: -27px;
+    display: none;
+    z-index: 222;
+}

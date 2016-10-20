@@ -1,0 +1,18 @@
+#QRcode{
+    position: fixed;
+    top:50%;
+    left:-80px;
+
+    margin-top:-188px;
+    display: none;
+    z-index: 98;
+
+}
+#Hiddenframe{
+    position: fixed;
+    top:50%;
+    right:-10px;
+    margin-top:-76px;
+    display: none;
+    z-index: 99999;
+}

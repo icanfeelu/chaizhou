@@ -1,0 +1,21 @@
+[{
+  "user":"kk",
+  "shopcar":[{
+    "goodsname":"手机",
+    "goodsprice":299
+  },{
+    "goodsname":"手机",
+    "goodsprice":299
+  }]
+
+},{
+  "user":"chaizhou",
+  "shopcar":[{
+    "goodsname":"iphone",
+    "goodsprice":299
+  },{
+    "goodsname":"手机",
+    "goodsprice":299
+  }]
+
+}]
