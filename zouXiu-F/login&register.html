@@ -159,7 +159,7 @@
 //  			console.log(userId)
     			var userIdcfm = $('#section_register input').eq(2).val();
     			if(userId===userIdcfm){
-    				var baseUrl ="http://datainfo.duapp.com/shopdata/";
+    				var baseUrl ="https://datainfo.duapp.com/shopdata/";
     				var tmpUrl ="userinfo.php";
     				$.ajax({
 		    			type:"post",
@@ -195,7 +195,7 @@
     		})
     		//登录
     		$('#section_login button').click(function(){
-    			var baseUrl = "http://datainfo.duapp.com/shopdata/userinfo.php"
+    			var baseUrl = "https://datainfo.duapp.com/shopdata/userinfo.php"
     			var userName = $('#section_login input').eq(0).val();
 //  			console.log(userName);
     			var userId = $('#section_login input').eq(1).val();

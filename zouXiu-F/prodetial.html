@@ -104,7 +104,7 @@
 			console.log(goodsID);
 			$.ajax({
 				type: "get",
-				url: "http://datainfo.duapp.com/shopdata/getGoods.php",
+				url: "https://datainfo.duapp.com/shopdata/getGoods.php",
 				dataType: "JSONP",
 				data: {
 					"goodsID": goodsID
@@ -155,7 +155,7 @@
 					number:1
 				},
 				type:"get",
-				url:"http://datainfo.duapp.com/shopdata/updatecar.php",
+				url:"https://datainfo.duapp.com/shopdata/updatecar.php",
 				async:true,				
 				success:function(data){
 					if(data==1){

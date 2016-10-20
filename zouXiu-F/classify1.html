@@ -143,7 +143,7 @@
     		//获取class类名,商品类名
     		$.ajax({
     			type:"get",
-    			url:"http://datainfo.duapp.com/shopdata/getclass.php",
+    			url:"https://datainfo.duapp.com/shopdata/getclass.php",
     			async:true,
     			success:function(data){
     				var htmStr = "";
@@ -175,7 +175,7 @@
 						console.log(cutIndex)
 						$.ajax({
 							type:"get",
-							url:"http://datainfo.duapp.com/shopdata/getclass.php",
+							url:"https://datainfo.duapp.com/shopdata/getclass.php",
 							async:true,
 							success:function(data){
 //								console.log(data)
@@ -235,7 +235,7 @@
 						function proDetail(classID,index){
 							$.ajax({
 							type:"get",
-							url:"http://datainfo.duapp.com/shopdata/getGoods.php",
+							url:"https://datainfo.duapp.com/shopdata/getGoods.php",
 							async:true,
 							data:{
 								classID: classID
