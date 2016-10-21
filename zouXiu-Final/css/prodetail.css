@@ -14,6 +14,7 @@ body, html {
   width: 100%;
   height: 90px;
   position: fixed;
+  1rem
   top: 0; }
 #container header div:nth-of-type(1) {
   width: 100%;
@@ -70,7 +71,31 @@ body, html {
   height: 100%;
   display: flex;
   flex-flow: column;
-  align-items: center; }
+  align-items: center; 
+  position: relative;}
+  #container section .pageCont .page1 #login-show-msg{
+			position:absolute;
+			width:80%;
+			top:25%;
+			left:10%;
+			height:80px;
+			/*margin-left:10%;*/
+			background: red;
+			color: white;
+			display: block;
+			opacity: 0.5;
+			border-radius: 1rem;
+			/*transform: scale(1);*/
+			animation: dispear 1s linear 2s;
+			display:none;
+			text-align: center;
+			line-height: 80px;
+			z-index: 99;
+	}
+	@keyframes dispear{
+		from{opacity:0.5;}
+		to{opacity:0;}
+	}
 #container section .pageCont .page1 img {
   width: 60%;
   height: 50%;

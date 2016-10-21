@@ -86,6 +86,7 @@
     	$(function(){
     		var mySwiper;
     		var userName = sessionStorage.getItem("name");
+    		console.log(userName);
     		//创建购物车商品
     		function showData(){   	
     			$("#empty button").click(function(){
@@ -104,12 +105,11 @@
     					userID:userName
     				},
     				success:function(data){
-						if(data==0){
+						if(data==0||data==2){
 							$('#empty').show();
 							$('.swiper-container').hide();
 							return;
 						}
-						
 						$('.swiper-container').show();
 						$('#empty').hide();
     					var htmlStr = "";

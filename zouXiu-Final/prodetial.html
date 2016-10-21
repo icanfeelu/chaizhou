@@ -40,6 +40,9 @@
 			<div class="swiper-container pageCont">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide page1">
+						<div id="login-show-msg">
+							成功添加至购物车!
+						</div>
 						<img src="" alt="" />
 						<h4>
 							<span>¥290</span>
@@ -144,7 +147,8 @@
 		//判断是否是在登录状态
 		$(".pageCont .page1 h4").click(function(){
 			var name = sessionStorage.getItem("name");
-			if(name===""){
+			console.log(name)
+			if(name==null){
 				alert("请先登录");
 				location.href="login&register.html"
 			}

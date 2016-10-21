@@ -188,9 +188,9 @@ body footer .footerDiv .focus, html footer .footerDiv .focus {
   background: red;
 }
 body footer .footerDiv .iconfont, html footer .footerDiv .iconfont {
-  font-size: 1.3rem;
+  font-size: 0.65rem;
 }
 body footer .footerDiv span:nth-of-type(2), html footer .footerDiv span:nth-of-type(2) {
-  font-size: 0.65rem;
+  font-size: 0.5rem;
   margin-bottom: 4px;
 }
