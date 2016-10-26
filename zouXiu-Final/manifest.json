@@ -217,7 +217,8 @@
 					"classify1.html",
 					"prodetial.html",
 					"shopcar.html",
-					"more.html"
+					"more.html",
+					"login\u0026register.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -228,7 +229,8 @@
 					"iconfont/iconfont.woff",
 					"iconfont/iconfont.css",
 					"shopcar.html",
-					"index.html"
+					"index.html",
+					"login\u0026register.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -241,7 +243,8 @@
 					"login\u0026register.html",
 					"index.html",
 					"classify1.html",
-					"img/pro/button.png"
+					"img/pro/button.png",
+					"more.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -257,7 +260,8 @@
 					"alliconfont/iconfont.css",
 					"alliconfont/iconfont.woff",
 					"iconfont/iconfont.woff",
-					"iconfont/iconfont.css"
+					"iconfont/iconfont.css",
+					"classify1.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -274,7 +278,8 @@
 					"alliconfont/iconfont.woff",
 					"iconfont/iconfont.woff",
 					"iconfont/iconfont.css",
-					"shopcar.html"
+					"shopcar.html",
+					"img/main/botton2.jpg"
 				],
 				"refer": [],
 				"priority": 0

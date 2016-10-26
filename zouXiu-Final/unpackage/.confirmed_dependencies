@@ -1,104 +1,109 @@
 {
-	"index.html": {
-		"resources": [
-			"js/cookie.js",
-			"js/app.js",
-			"img/main/shopcart.jpg",
-			"css/main.css",
-			"js/jquery-1.12.1.js",
-			"alliconfont/iconfont.css",
-			"js/iscroll.js",
-			"css/swiper.min.css",
-			"alliconfont/iconfont.woff",
-			"js/swiper.min.js",
-			"classify1.html",
-			"prodetial.html",
-			"shopcar.html",
-			"more.html"
-		],
-		"refer": [
-			"classify1.html",
-			"prodetial.html",
-			"shopcar.html",
-			"more.html"
-		]
-	},
-	"classify1.html": {
-		"resources": [
-			"css/classify1.css",
-			"iconfont/iconfont.woff",
-			"iconfont/iconfont.css",
-			"shopcar.html",
-			"index.html"
-		],
-		"refer": [
-			"shopcar.html",
-			"index.html"
-		]
-	},
-	"shopcar.html": {
-		"resources": [
-			"css/shopcar.css",
-			"img/main/botton1.jpg",
-			"img/main/empty.jpg",
-			"login\u0026register.html",
-			"index.html",
-			"classify1.html",
-			"img/pro/button.png"
-		],
-		"refer": [
-			"login\u0026register.html",
-			"index.html",
-			"classify1.html"
-		]
-	},
-	"more.html": {
-		"resources": [
-			"img/main/botton2.jpg",
-			"login\u0026register.html",
-			"css/more.css",
-			"js/app.js",
-			"js/cookie.js",
-			"js/jquery-1.12.1.js",
-			"alliconfont/iconfont.css",
-			"alliconfont/iconfont.woff",
-			"iconfont/iconfont.woff",
-			"iconfont/iconfont.css"
-		],
-		"refer": [
-			"login\u0026register.html"
-		]
-	},
-	"login\u0026register.html": {
-		"resources": [
-			"css/login\u0026register.css",
-			"more.html",
-			"img/main/myxiu.jpg",
-			"js/app.js",
-			"js/cookie.js",
-			"js/jquery-1.12.1.js",
-			"alliconfont/iconfont.css",
-			"alliconfont/iconfont.woff",
-			"iconfont/iconfont.woff",
-			"iconfont/iconfont.css",
-			"shopcar.html"
-		],
-		"refer": [
-			"more.html",
-			"shopcar.html"
-		]
-	},
-	"prodetial.html": {
-		"resources": [
-			"img/main/slider1.jpg",
-			"img/pro/pro1.png",
-			"css/prodetail.css",
-			"index.html",
-			"login\u0026register.html"
-		],
-		"refer": [
-			"index.html",
-			"login\u0026register.html"
-		]
-	}
+  "index.html": {
+    "resources": [
+      "js/cookie.js",
+      "js/app.js",
+      "img/main/shopcart.jpg",
+      "css/main.css",
+      "js/jquery-1.12.1.js",
+      "alliconfont/iconfont.css",
+      "js/iscroll.js",
+      "css/swiper.min.css",
+      "alliconfont/iconfont.woff",
+      "js/swiper.min.js",
+      "classify1.html",
+      "prodetial.html",
+      "shopcar.html",
+      "more.html",
+      "login\u0026register.html"
+    ],
+    "refer": [
+      "classify1.html",
+      "prodetial.html",
+      "shopcar.html",
+      "more.html"
+    ]
+  },
+  "classify1.html": {
+    "resources": [
+      "css/classify1.css",
+      "iconfont/iconfont.woff",
+      "iconfont/iconfont.css",
+      "shopcar.html",
+      "index.html",
+      "login\u0026register.html"
+    ],
+    "refer": [
+      "shopcar.html",
+      "index.html"
+    ]
+  },
+  "shopcar.html": {
+    "resources": [
+      "css/shopcar.css",
+      "img/main/botton1.jpg",
+      "img/main/empty.jpg",
+      "login\u0026register.html",
+      "index.html",
+      "classify1.html",
+      "img/pro/button.png",
+      "more.html"
+    ],
+    "refer": [
+      "login\u0026register.html",
+      "index.html",
+      "classify1.html"
+    ]
+  },
+  "more.html": {
+    "resources": [
+      "img/main/botton2.jpg",
+      "login\u0026register.html",
+      "css/more.css",
+      "js/app.js",
+      "js/cookie.js",
+      "js/jquery-1.12.1.js",
+      "alliconfont/iconfont.css",
+      "alliconfont/iconfont.woff",
+      "iconfont/iconfont.woff",
+      "iconfont/iconfont.css",
+      "classify1.html"
+    ],
+    "refer": [
+      "login\u0026register.html"
+    ]
+  },
+  "login\u0026register.html": {
+    "resources": [
+      "css/login\u0026register.css",
+      "more.html",
+      "img/main/myxiu.jpg",
+      "js/app.js",
+      "js/cookie.js",
+      "js/jquery-1.12.1.js",
+      "alliconfont/iconfont.css",
+      "alliconfont/iconfont.woff",
+      "iconfont/iconfont.woff",
+      "iconfont/iconfont.css",
+      "shopcar.html",
+      "img/main/botton2.jpg"
+    ],
+    "refer": [
+      "more.html",
+      "shopcar.html"
+    ]
+  },
+  "prodetial.html": {
+    "resources": [
+      "img/main/slider1.jpg",
+      "img/pro/pro1.png",
+      "css/prodetail.css",
+      "index.html",
+      "login\u0026register.html"
+    ],
+    "refer": [
+      "index.html",
+      "login\u0026register.html"
+    ]
+  }
 }
