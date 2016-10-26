@@ -3,6 +3,13 @@
  */
 
 $(function () {
+	//切换到商品详情
+	$("#search2 li").on("click","a",function(){
+		location.href="Description.html";
+	})
+	$("#nav1 li").on("click","img",function(){
+		location.href="Description.html";
+	})
     initLoginStats();
     //导航栏切换图片
     $('#nav1 ul').on('mouseenter', 'li', function () {

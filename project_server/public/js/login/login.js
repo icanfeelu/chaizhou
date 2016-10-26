@@ -43,7 +43,7 @@ $(function(){
             if(data.msg){
                 document.cookie="shanmao.user="+$('#name_input').val();
                 document.cookie="shanmao.loginstats=true";
-                location.href='moonbasa.html'
+                location.href='index.html'
             }else{
                 $('#name_div').show();
                 $('#pwd_div').show();

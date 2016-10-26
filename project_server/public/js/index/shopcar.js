@@ -4,7 +4,7 @@
 $(function(){
     var username=initLoginStats();
     $('.top img').on('click',function(){
-            location.href="moonbasa.html"
+            location.href="index.html"
     })
     //获取购物车热销区域商品
     $.get('/api/carproduct',function(data){
