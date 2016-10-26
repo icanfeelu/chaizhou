@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body, html {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+/*.focus {
+  border-top: 3px solid #e43669; 
+  box-shadow:0px 5px 10px 4px black;
+  }*/
+
+#container {
+  width: 100%;
+  height: 100%; 
+  position: relative;
+}
+
+#container header {
+  width: 100%;
+  height: 45px;
+  background: #e4366b;
+  position: fixed;
+  top: 0;
+  display: flex;
+	justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  z-index: 9; }
+ #container header .iconfont{
+ 	width:33%;
+ 	text-indent:10px;
+ 	color: white;
+ 	text-decoration: none;
+ }
+ #container header div{
+ 	width:33%;
+ 	display: inline-flex;
+ 	justify-content: center;
+ 	align-items: center;
+ 	
+ }
+ #container header div button{
+ 	width: 65px;
+	height: 30px;
+	/*background: #e4366b;*/
+	/*border-top: 1px solid pink;
+	border-bottom: 1px solid pink;*/
+	border-radius: 9px;
+	box-shadow: 0 0 2px 2px white outset;
+	color: white;
+	outline-style: none;
+	border: 0;
+	background: url(../img/main/botton1.jpg) repeat center center;
+ }
+ #container #section {
+  /*display: none;*/
+  overflow-y: scroll;
+  position: absolute;
+  top: 45px;
+  bottom: 50px;
+  width: 100%; 
+  
+  }
+   #container #section #myXiu{
+   	width:100%;
+   	height:40%; 	
+   	display: flex;
+   	flex-flow: row;  	
+   }
+   #container #section #myXiu #myXiu1{
+   	width:40%;
+   	height:100%;
+   	display: flex;
+   	justify-content: center;
+   	align-items: center;
+   	
+   }
+   #container #section #myXiu #myXiu1 img{
+   	width:70%;
+   	height:50%;
+   	
+   }
+    #container #section #myXiu #myXiu2{
+   	width:60%;
+   	height:100%;
+   	display: inline-flex;
+   	flex-flow: column;
+   	align-items: center;
+   	justify-content: center;
+
+
+   }
+   #container #section #myXiu #myXiu2 h4{
+   	width:100%;
+   	/*height:40px;*/
+   	/*display: flex;*/
+   	margin-bottom:10%;
+   	font-size: 1rem;
+	
+   	
+   }
+   #container #section #myXiu #myXiu2 .button2{
+   	width:100%;
+   	/*height:50%;*/
+   	display: inline-flex;
+   	flex-flow: row nowrap;
+   	justify-content: space-between
+   	
+   }
+    #container #section #myXiu #myXiu2 .button2 button{
+    	width:40%;
+    	height:1.5rem;
+    	background: #e6356b;
+    	border: 0;
+    	outline-style: none;
+    	
+    	color: white;
+    	border-radius: 0.5rem;
+    }
+    #container #section #myXiu #myXiu2 .button2 button:nth-of-type(2){
+    	margin-right: 10%;
+    }
+    
+    #container #section ul{
+    	width:80%;
+   		height:40%;
+   		/*margin:10% 10% 20% 10%;*/
+   		font-size:0.5rem;
+   		display: flex;
+   		flex-flow: column; 
+   		list-style: none; 	
+   		/*justify-content: center;*/
+   		align-items: center;
+   		margin-left:10%;
+   		border: 1px solid black;
+   		border-radius: 20px;
+    }
+    #container #section ul li{
+    	text-indent:0.5rem;
+    	width:100%;
+    	height:25%;
+    	display: flex;
+    	align-items: center;
+    	justify-content: space-between;
+    	border-bottom: 1px solid black;
+    	
+    }
+    #container #section ul li span:nth-of-type(2){
+    	margin-right:0.5rem;
+    	
+    }
+    #container #section ul li:nth-of-type(1){
+    	border-radius:20px 20px 0 0;
+    }
+    #container #section ul li:nth-of-type(4){
+    	border-bottom:none;
+    }
+    #container #section_login_oout{
+    	display: none;
+    	position: absolute;
+		  top: 45px;
+		  bottom: 50px;
+		  width: 100%; 
+    }
+    #container #section_login{ 	
+    	overflow-y: scroll;
+		  width:100%;
+		  height:500px;
+		  display: inline-flex;
+		  flex-flow: column;
+		  /*justify-content: center;*/
+		  align-items: center;
+    }
+
+		#login-show-msg,#login-show-msg-error1,#login-show-msg-error2{
+			position:absolute;
+			width:80%;
+			top:25%;
+			left:10%;
+			height:80px;
+			/*margin-left:10%;*/
+			background: gray;
+			color: white;
+			display: block;
+			opacity: 0.5;
+			border-radius: 20px;
+			/*transform: scale(1);*/
+			animation: dispear 1s linear 2s;
+			display:none;
+			text-align: center;
+			line-height: 80px;
+		}
+		input:focus{
+			outline: none;
+			background: #F3F4F6;
+		}
+    #container #section_login_oout #section_login>input:nth-of-type(1){
+    	width:80%;
+    	height:50px;
+    	margin-top:10%;
+    	border-radius:12px;
+    	/*box-shadow: 0 0 1px 1px #cccccc;*/
+    	text-indent: 1rem;
+    	
+    }
+    #container #section_login_oout #section_login input:nth-of-type(2){
+    	width:80%;
+    	height:50px;
+    	margin-top:10%;
+    	border-radius:12px;
+    	text-indent: 1rem;
+    }
+    #container #section_login_oout #section_login div{
+    	width:80%;
+    	/*height:15%;*/
+    	margin-top:10%;
+    }
+    #container #section_login_oout #section_login label{
+    	font-size:0.65rem;
+    }
+    #container #section_login_oout #section_login div a{
+    	margin-left:1rem;
+    	color: #cccccc;
+    	text-decoration: underline;
+    	font-size:0.65rem;
+    }
+    
+     #container #section_login_oout #section_login div input{
+    	width:0.8rem;
+    	height:0.8rem;
+    	margin-right:1rem;
+    }
+    #container #section_login_oout #section_login button{
+    	width:80%;
+    	height:9%;
+    	margin-top:10%;
+    	border-radius:12px;
+    	background: url(../img/main/botton2.jpg) repeat;
+    	color: white;
+    	outline-style: none;
+    	border: 0;
+    }
+    #container #section_register_out{
+    	display: none;
+    	position: absolute;
+		  top: 45px;
+		  bottom: 50px;
+		  width: 100%; 
+    }
+		 #show-msg,#show-msg-error{
+			position:absolute;
+			width:80%;
+			top:25%;
+			left:10%;
+			height:80px;
+			/*margin-left:10%;*/
+			background: gray;
+			color: white;
+			display: block;
+			opacity: 0.5;
+			border-radius: 1rem;
+			/*transform: scale(1);*/
+			animation: dispear 1s linear 2s;
+			display:none;
+			text-align: center;
+			line-height: 80px;
+		}
+		@keyframes dispear{
+			from{opacity:0.5;}
+			to{opacity:0;}
+		}
+    #container #section_register_out #section_register{
+    	overflow-y: scroll;
+		  width: 100%; 
+		  height:500px;
+		  display: inline-flex;
+		  flex-flow: column;
+		  /*justify-content: center;*/
+		  align-items: center;
+    }
+    #container #section_register_out #section_register input{
+    	width:80%;
+    	height:50px;
+    	margin-top:10%;
+    	border-radius:12px;
+    	text-indent: 1rem;
+    }
+    #container #section_register_out #section_register button{
+    	width:80%;
+      height:50px;
+    	margin-top:10%;
+    	border-radius:12px;
+    	background: url(../img/main/botton2.jpg) repeat;
+    	color: white;
+    	border:0;
+    	outline-style: none;
+    }
+    
+    
+ body footer, html footer {
+  width: 100%;
+  height: 60px;
+  background: #484850;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+}
+html footer .footerDiv:nth-of-type(4) {
+  background: #333333;
+}
+body footer .footerDiv, html footer .footerDiv {
+  width: 20%;
+  display: inline-flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+body footer .footerDiv div, html footer .footerDiv div {
+  width: 100%;
+  height: 3px;
+}
+body footer .footerDiv .focus, html footer .footerDiv .focus {
+  background: red;
+}
+body footer .footerDiv .iconfont, html footer .footerDiv .iconfont {
+  font-size: 0.65rem;
+}
+body footer .footerDiv span:nth-of-type(2), html footer .footerDiv span:nth-of-type(2) {
+  font-size: 0.5rem;
+  margin-bottom: 4px;
+}

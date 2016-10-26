@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>登录</title>
+    <link rel="stylesheet" href="css/more.css" />
+	<link rel="stylesheet" href="iconfont/iconfont.css" />
+	<link rel="stylesheet" href="alliconfont/iconfont.css" />
+</head>
+	<style>
+		*{
+			font-family: "幼圆";
+		}
+	</style>
+<body>
+	
+	<div id="container">		
+	 	<header>
+	 		<a href="javascript:history.go(-1)" class="iconfont">&#xe619;</a>
+	 		<span>更多</span>
+	 		<div></div>
+	 	</header>
+	 	<section>
+	 		<ul>
+	 			<li>常见问题<span>></span></li>
+	 			<li>系统设置<span>></span></li>
+	 			<li>软件更新<span>></span></li>
+	 			<li>扫描二维码<span>></span></li>
+	 		</ul>
+	 		<ul>
+ 				<li>我要提意见<span>></span></li>
+ 				<li>关于<span>></span></li>
+ 			</ul>
+	 		<button>退出登录</button>
+	 	</section>
+	 	<footer>	
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe63c;</span><span>首页</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe68c;</span><span>分类</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe639;</span><span>购物车</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe64f;</span><span>我的</span></div>
+		<div class="footerDiv"><div class="focus"></div><span class="iconfont">&#xe647;</span><span>更多</span></div>		
+	</footer>		
+	</div>
+ 	
+	</div>
+	<script src="js/jquery-1.12.1.js"></script>
+	<script src="js/cookie.js"></script>
+	<script src="js/app.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$("section button").click(function(){
+    			sessionStorage.clear();
+    			location.href = "login&register.html";
+    			
+    		})
+    		$('footer .footerDiv').click(function(){
+	    	 	if($(this).index()==1){
+	    	 		location.href = "classify1.html";
+	    	 	}if($(this).index()==3){
+	    	 		location.href = "login&register.html";
+	    	 	}if($(this).index()==0){
+	    	 		location.href = "index.html";
+	    	 	}if($(this).index()==2){
+	    	 		location.href = "shopcar.html";
+	    	 	}if($(this).index()==4){
+	    	 		location.href = "more.html";
+	    	 	}
+    	 	})
+    	})
+    		
+    		
+	
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" href="css/swiper.min.css" /> 
+	<link rel="stylesheet" href="iconfont/iconfont.css" />
+	<link rel="stylesheet" href="css/prodetail.css" />
+    <title>main-area</title>
+    
+</head>
+<style>
+	*{
+		font-family: "幼圆";
+	}
+</style>
+
+<body>
+	<div id="container">		
+	 	<header>
+	 		<div>
+		 		<a href="javascript:history.go(-1)" class="iconfont">&#xe619;</a>
+		 		<i>商品介绍</i>
+		 		<button>分享</button>
+	 		</div>
+	 		<div>
+	 			<p>距离活动结束时间:04天01小时15分钟47.2秒</p>
+	 		</div>
+	 	</header>
+	 	<section>
+			<div class="swiper-container pageCont">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide page1">
+						<div id="login-show-msg">
+							成功添加至购物车!
+						</div>
+						<img src="" alt="" />
+						<h4>
+							<span>¥290</span>
+							<span>灰色印花短袖T恤</span>
+						</h4>
+						<p>
+							<span>市场价: <i>$259</i></span>
+							<span><i>4.8</i>折</span>
+							<span><i>125</i>人购买</span>
+						</p>
+					</div>
+					<div class="swiper-slide page2">
+						<img src="img/main/slider1.jpg" alt="" />
+						<div>
+							<p>dadadadsadadadadada</p>
+						</div>
+					</div>
+					<div class="swiper-slide page3">
+						<div class="swiper-container pageCont11">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide page11"><img src="" alt="" /></div>
+								<div class="swiper-slide page22"><img src="" alt="" /></div>
+								<div class="swiper-slide page33"><img src="" alt="" /></div>
+							</div>
+							<div class="swiper-pagination swiper-pagination2"></div>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination swiper-pagination1"></div>
+	 	</section>
+	 	<footer>
+
+	 	</footer>		
+	</div>
+ 	
+ 	
+ 	
+	<script src="js/jquery-1.12.1.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/cookie.js"></script>
+	<script src="js/app.js"></script>
+   <script type="text/javascript">
+	$(function() {
+		showData();
+		var swiper = new Swiper(".pageCont", {
+			effect: 'fade',
+//			loop: true,
+			pagination: '.swiper-pagination1',
+			paginationClickable: true,
+			paginationBulletRender: function(index, className) {
+				var array = ["介绍", "详情", "实拍"];
+				return '<span class="' + className + ' cusClass">' + array[index] + '</span>';
+			}
+		})
+		var goodsID;
+		//通过goodsID 来获得详情页商品 
+		function showData() {
+			goodsID = sessionStorage.getItem("goodsID");
+			console.log(goodsID);
+			$.ajax({
+				type: "get",
+				url: "https://datainfo.duapp.com/shopdata/getGoods.php",
+				dataType: "JSONP",
+				data: {
+					"goodsID": goodsID
+				},
+				success: function(data) {
+					console.log(data);
+					var Data = JSON.parse(data[0].imgsUrl)
+					var goodsBenUrl = JSON.parse(data[0].goodsBenUrl);
+					$('.swiper-wrapper .page1 img').attr("src", Data[0]);
+					var finalPrice = parseInt(parseInt(data[0].price) * parseInt(data[0].discount) / 10);
+					$('.swiper-wrapper .page1 h3 span').eq(0).html("¥ " + finalPrice);
+					$('.swiper-wrapper .page1 h3 span').eq(1).html(data[0].goodsName);
+					$('.swiper-wrapper .page1 p span i').eq(0).html("¥" + data[0].price);
+					$('.swiper-wrapper .page1 p span').eq(1).html("  " + data[0].discount + "折");
+					$('.swiper-wrapper .page1 p span').eq(2).html(data[0].buynumber + " 人购买");
+					$('.swiper-wrapper .page2 img').attr("src", data[0].goodsListImg);
+					$('.swiper-wrapper .page2 p').html(data[0].detail);
+					$('.swiper-wrapper .page3 .page11 img').attr("src", goodsBenUrl[0]);
+					$('.swiper-wrapper .page3 .page22 img').attr("src", goodsBenUrl[1]);
+					$('.swiper-wrapper .page3 .page33 img').attr("src", goodsBenUrl[2]);
+					var swiperDetail = new Swiper(".pageCont11", {
+						//						effect : 'fade',
+//						loop: true,
+						pagination: '.swiper-pagination2',
+						//			paginationClickable: true,
+//						paginationType: 'bullet',
+						//			paginationType : 'progress',
+						//			paginationType : 'custom',
+					})
+
+				},
+				error: function(error) {
+					console.log(error);
+				}
+			})
+		}
+		//判断是否是在登录状态
+		$(".pageCont .page1 h4").click(function(){
+			var name = sessionStorage.getItem("name");
+			console.log(name)
+			if(name==null){
+				alert("请先登录");
+				location.href="login&register.html"
+			}
+			$.ajax({
+				data:{
+					userID:name,
+					goodsID:goodsID,
+					number:1
+				},
+				type:"get",
+				url:"https://datainfo.duapp.com/shopdata/updatecar.php",
+				async:true,				
+				success:function(data){
+					if(data==1){
+						console.log("添加购物车成功")
+					}else{
+						console.log("错误")
+					}
+				},
+				error:function(error){
+					console.log(error)
+				}
+			});
+		})
+
+	})
+</script>
+   
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  position: relative;
+  height: 100%; }
+
+body {
+  background: #fff;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000; }
+
+.swiper-container {
+  width: 100%;
+  height: 100%; }
+.swiper-container #start {
+  position: absolute;
+  z-index: 99;
+  opacity: 1;
+  animation: show 1s linear 1 3s forwards; }
+@keyframes show {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+.swiper-container .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
+.swiper-container .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%; }

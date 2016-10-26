@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" href="css/swiper.min.css" /> 
+	<link rel="stylesheet" href="iconfont/iconfont.css" />
+	<link rel="stylesheet" href="css/shopcar.css" />
+	<link rel="stylesheet" href="alliconfont/iconfont.css" />
+    <title>main-area</title>
+    
+</head>
+<style>
+	*{
+		font-family: "幼圆";
+	}
+</style>
+
+<body>
+	<div id="container">		
+	 	<header>
+	 		<div>
+		 		<a href="javascript:history.go(-1)" class="iconfont">&#xe619;</a>
+		 		<i>购物车</i>
+		 		<button>去结算</button>
+	 		</div>
+	 	</header>
+	 	<section>
+	 		<div id="empty">
+	 			<h4>您的购物车还没有东西哟</h4>
+	 			<img src="img/main/empty.jpg" alt="" />
+	 			<button>去逛逛</button>
+	 		</div>
+	 		
+	 		<div id="proList" class="swiper-container">
+	 			<div class="swiper-wrapper">
+	 				<!--<div class="swiper-slide">
+	 					<div class="listL">
+	 						
+	 					</div>
+		    			<div class="listR">
+		    				<p>
+		    					<span></span>
+		    					<span class="iconfont">&#xe68d;</span>
+		    				</p>
+		    				<p>
+		    					单价: <span></span>
+		    				</p>
+		    				<p>
+		    					数量:<button>-</button><input type="text" value="1" /><button>+</button>
+		    				</p>
+		    			</div>
+	 				</div>-->
+	 			</div>
+	 		</div>
+	 	</section>
+	 	<footer>	
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe63c;</span><span>首页</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe68c;</span><span>分类</span></div>
+		<div class="footerDiv"><div class="focus"></div><span class="iconfont">&#xe639;</span><span>购物车</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe64f;</span><span>我的</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe647;</span><span>更多</span></div>		
+	</footer>	
+	</div>
+ 	
+ 	
+ 	
+	<script src="js/jquery-1.12.1.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/cookie.js"></script>
+	<script src="js/app.js"></script>
+	 <script type="text/html" id="Html1">
+    		<li><a href="javascript:;">{{content}}</a><span>></span></li>
+    </script>
+    <script type="text/javascript">
+    	
+    	$(function(){
+    		var mySwiper;
+    		var userName = sessionStorage.getItem("name");
+    		console.log(userName);
+    		//创建购物车商品
+    		function showData(){   	
+    			$("#empty button").click(function(){
+    				location.href="index.html";
+    			})
+    			if(userName==""){
+    				return;
+    			}else{
+//  				$('#empty').html("<img src = 'img/loading.gif'>").css("background","#4f4f4f");
+    			$.ajax({
+    				type:"get",
+    				url:"https://datainfo.duapp.com/shopdata/getCar.php",
+    				async:true,
+    				dataType:"JSONP",
+    				data:{
+    					userID:userName
+    				},
+    				success:function(data){
+						if(data==0||data==2){
+							$('#empty').show();
+							$('.swiper-container').hide();
+							return;
+						}
+						$('.swiper-container').show();
+						$('#empty').hide();
+    					var htmlStr = "";
+    					console.log(data)
+    					for(var i = 0;i<data.length;i++){
+    						var finalPrice = parseInt(parseInt(data[i].price) * parseInt(data[i].discount) / 10)
+    						htmlStr += '<div class="swiper-slide slide-pageCont" goodsid = "'+data[i].goodsID+'">';
+    						htmlStr += '<div class="listL"><img src="'+data[i].goodsListImg+'" /></div>';
+    						htmlStr +=  '<div class="listR">';
+					    	htmlStr +=	'<p>';
+					    	htmlStr +=	'<span>'+ data[i].goodsName + '</span>';
+					    	htmlStr +=	'<span class="iconfont">&#xe68d;</span>';
+					    	htmlStr +=	'</p>';
+					    	htmlStr +=	'<p>'
+					    	htmlStr +=	'单价: <span>¥   '+ finalPrice + '</span>';
+					    	htmlStr +=	'</p>'
+					    	htmlStr +=	'<p>'
+					    	htmlStr +=	'数量:<button>-</button><input type="text" value="1" /><button>+</button>'
+					    	htmlStr +=	'</p>'
+		    				htmlStr +=	'</div>'
+    						htmlStr +=	'</div>'
+    					}
+//  					console.log(htmlStr)
+    					$('.swiper-wrapper').html(htmlStr);
+    					mySwiper = new Swiper(".swiper-container",{
+    						direction : 'vertical',
+    						slidesPerView : 'auto',
+    					})
+    					 //删除商品
+				    	 $('.swiper-wrapper').on('click','.iconfont',function(){
+				    	 	var inDex = $(this).index(".swiper-wrapper .iconfont");
+				    	 	var goodID = $('.slide-pageCont').eq(inDex).attr("goodsid");
+				    	 	$(".slide-pageCont").eq(inDex).remove();
+				    	 	$.ajax({
+				    	 		type:"get",
+				    	 		url:"https://datainfo.duapp.com/shopdata/updatecar.php",
+				    	 		async:true,
+				    	 		data:{
+				    	 			goodsID:goodID,
+				    	 			userID:userName,
+				    	 			number:0
+				    	 		},
+				    	 		success:function(data){
+				    	 			console.log($(".swiper-wrapper").html())
+				    	 			 if($(".swiper-wrapper .slide-pageCont").size()==0){
+				    	 			 	$(".swiper-container").hide();
+				    	 				$('#empty').show();
+				    	 			}
+				    	 		},
+				    	 		error:function(error){
+				    	 			console.log(error);
+				    	 		}
+				    	 	});
+				    	 })
+				    	
+    				},
+    				error:function(error){
+    					console.log(error);
+    				}
+    			});
+    		
+    		}
+			  				   			
+		}
+    	showData();
+    	
+    	 $('footer .footerDiv').click(function(){
+    	 	if($(this).index()==1){
+    	 		location.href = "classify1.html";
+    	 	}if($(this).index()==3){
+    	 		location.href = "login&register.html";
+    	 	}if($(this).index()==0){
+    	 		location.href = "index.html";
+    	 	}if($(this).index()==2){
+    	 		location.href = "shopcar.html";
+    	 	}if($(this).index()==4){
+    	 		location.href = "more.html";
+    	 	}
+    	 	
+    	 })
+    	})
+    	
+    </script>
+   
+</body>
+
+</html>

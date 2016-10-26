@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- SEO  -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- 苹果专用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 简单移动端适配 -->
+   	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>登录</title>
+    <link rel="stylesheet" href="css/login&register.css" />
+	<link rel="stylesheet" href="iconfont/iconfont.css" />
+	<link rel="stylesheet" href="alliconfont/iconfont.css" />
+</head>
+	<style>
+		*{
+			font-family: "幼圆";
+		}
+	</style>
+<body>
+	
+	<div id="container">
+		
+	 	<header>
+	 		<a href="javascript:history.go(-1)" class="iconfont">&#xe619;</a>
+	 		<span>我的</span>
+	 		<div></div>
+	 	</header>
+	 	<div id="section">
+	 		<div id="myXiu">
+	 			<div id="myXiu1"><img src="img/main/myxiu.jpg" alt="" /></div>
+	 			<div id="myXiu2">
+	 				<h4>昵称:<span>未知</span></h4>
+	 				<div class="button2">
+	 					<button>登录</button>
+	 					<button>注册</button>
+	 				</div>
+
+	 			</div>
+	 		</div>		
+	 		<ul>
+ 				<li><span>我的订单</span><span>></span></li>
+ 				<li><span>我的优惠券</span><span>></span></li>
+ 				<li><span>我的浏览</span><span>></span></li>
+ 				<li><span>我的收藏</span><span>></span></li>
+ 			</ul>
+	 	</div>
+	 	<div id="section_login_oout">
+		 	<div id="section_login">
+		 		<div id="login-show-msg">
+					登录成功
+				</div>
+				<div id="login-show-msg-error1">
+					用户名密码不一致
+				</div>
+				<div id="login-show-msg-error2">
+					用户名不存在
+				</div>
+		 		<input type="text" placeholder="账号"/>
+		 		<input type="password" placeholder="密码"/>
+		 		<div><input type="checkbox" id="check"/><label for="check">记住密码</label><a href="javascript:;">忘记密码?	</a></div>
+		 		<button>登录</button>
+		 	</div>
+	 	</div>
+	 	<div id="section_register_out">
+	 		<div id="show-msg">
+				恭喜您注册成功!
+			</div>
+			<div id="show-msg-error">
+				密码不一致
+			</div>
+	 		<div id="section_register">
+		 		<input type="text" placeholder="账号" />
+		 		<input type="password" placeholder="密码" />
+		 		<input type="password" placeholder="重复密码"/>
+		 		<button>同意服务协议并注册</button>
+	 		</div>
+	 	</div>
+	 	
+	 	<footer>	
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe63c;</span><span>首页</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe68c;</span><span>分类</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe639;</span><span>购物车</span></div>
+		<div class="footerDiv"><div class="focus"></div><span class="iconfont">&#xe64f;</span><span>我的</span></div>
+		<div class="footerDiv"><div></div><span class="iconfont">&#xe647;</span><span>更多</span></div>		
+	</footer>	
+	</div>
+ 	
+	</div>
+	<script src="js/cookie.js"></script>
+	<script src="js/jquery-1.12.1.js"></script>
+	<script src="js/app.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		var name = sessionStorage.getItem("name");	
+    		console.log("name :"+name)
+    		if(name!=null){
+    			$('#myXiu2 .button2').hide();
+    			$('#section #myXiu2 h4 span').html(name);
+    		}else{
+    			
+    			$('#myXiu2 .button2').show();
+    			$('#section #myXiu2 h4 span').html("未知");
+    			
+    		}
+			//登录注册界面切换
+    		$('#section button').click(function(){
+    			if($(this).index()==0){
+	    			$('#section').hide();
+	    			$('#section_login_oout').show();
+	    			$('#section_register_out').hide();			
+	    			$('header div').html("<button>注册</button>");
+    			}else{
+    				$('#section').hide();
+	    			$('#section_login_oout').hide();
+	    			$('#section_register_out').show();
+	    			$('header div').html("<button>登录</button>");	
+    			}
+    			$('header div button').click(function(){
+					var buttonHtml = $('header div button').html(); 
+					if(buttonHtml === "登录"){
+						$('#section_login_oout').show();
+						$('#section_register_out').hide();
+						$('header div button').html("注册");
+					}
+					if(buttonHtml === "注册"){
+						$('#section_login_oout').hide();
+						$('#section_register_out').show();
+						$('header div button').html("登录");
+					}
+				})
+    		}) 
+    		//footer界面切换
+    		$('footer .footerDiv').click(function(){
+			 	if($(this).index()==1){
+			 		location.href = "classify1.html";
+			 	}if($(this).index()==3){
+			 		location.href = "login&register.html";
+			 	}if($(this).index()==0){
+			 		location.href = "index.html";
+			 	}if($(this).index()==2){
+			 		location.href = "shopcar.html";
+			 	}if($(this).index()==4){
+			 		location.href = "more.html";
+			 	}   	 	
+    	 	})
+    		//注册
+    		$('#section_register button').click(function(){
+    			
+    			var userName = $('#section_register input').eq(0).val();
+//  			console.log(userName);
+    			var userId = $('#section_register input').eq(1).val();
+//  			console.log(userId)
+    			var userIdcfm = $('#section_register input').eq(2).val();
+    			if(userId===userIdcfm){
+    				var baseUrl ="https://datainfo.duapp.com/shopdata/";
+    				var tmpUrl ="userinfo.php";
+    				$.ajax({
+		    			type:"post",
+		    			data:{status:"register",
+		    				  userID:userName,
+		    				  password:userId},
+		    			url:baseUrl + tmpUrl, 			
+//		    			dataType:"JSONP",
+		    			success:function(data){
+		    				console.log(typeof data);
+		    				console.log(data);
+		    				if(data==1){
+								$('#show-msg').show();
+    							var timer = setTimeout(function(){
+    								$('#show-msg').hide();
+    								$('#section_register_out').hide();
+    								$('#section_login_oout').show();
+    							},3000)
+							}
+		    				
+		    			},
+		    			error:function(error){
+		    				console.log(error);
+		    				
+		    			}
+    				});
+    			}else{
+    				$('#show-msg-error').show();
+    				var timer = setInterval(function(){
+    					$('#show-msg-error').hide();
+    				},3000)
+    			}
+    		})
+    		//登录
+    		$('#section_login button').click(function(){
+    			var baseUrl = "https://datainfo.duapp.com/shopdata/userinfo.php"
+    			var userName = $('#section_login input').eq(0).val();
+//  			console.log(userName);
+    			var userId = $('#section_login input').eq(1).val();
+//  			console.log(userId)
+				$.ajax({
+		    			type:"get",
+		    			data:{status:"login",
+		    				  userID:userName,
+		    				  password:userId},
+		    			url:baseUrl, 			
+//		    			dataType:"JSONP",
+		    			success:function(data){
+		    				console.log(typeof data);
+		    				console.log(data);
+		    				if(data==0){
+								$('#login-show-msg-error2').show();
+    							var timer = setTimeout(function(){
+    								$('#login-show-msg-error2').hide();
+    							},3000)
+							}else if(data==2){
+								$('#login-show-msg-error1').show();
+    							var timer = setTimeout(function(){
+    								$('#login-show-msg-error1').hide();
+    							},3000)
+							}else{
+								$('#login-show-msg').show();
+								var timer = setTimeout(function(){
+    								$('#login-show-msg').hide();
+    								$('#section_login_oout').hide();
+    								$('#section').show();
+    								$('#section #myXiu2 h2 span').html(userName);
+    								location.reload();
+    								sessionStorage.setItem("name",userName);
+    							},3000)
+								
+							}
+		    				
+		    			},
+		    			error:function(error){
+		    				console.log(error);
+		    				
+		    			}
+    				});
+    		})
+    	})
+    		
+    		
+	
+    </script>
+</body>
+
+</html>
