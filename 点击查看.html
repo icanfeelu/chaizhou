@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" />
+    <!--<link rel="stylesheet" type="text/css" href="../libs/css/common.css"/>-->
+    <title>time out！！</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        text-align: center;
+    }
+    h1{
+        font-weight: 100;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    span{
+        display: inline-block;
+        width: 40px;
+        background-color: #000;
+        color: #fff;
+        border-radius: 10px;
+    }
+    div{
+        width:100%;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+</style>
+<body>
+    <div>
+        <h1>距离双节放假</h1>
+        <h1 id="show"><span></span>天<span></span>小时<span></span>分<span></span>秒</h1>
+    </div>
+</body>
+<script type="text/javascript">
+    var show=document.getElementById("show").getElementsByTagName("span");
+    setInterval(function(){
+        var timeing=new Date();
+        var time=new Date(2020,8,30,18,0,0);
+        var num=time.getTime()-timeing.getTime();
+        
+        var day=parseInt(num/(24*60*60*1000));          
+        num=num%(24*60*60*1000);
+        var hour=parseInt(num/(60*60*1000));            
+        num=num%(60*60*1000);
+        var minute=parseInt(num/(60*1000));
+        num=num%(60*1000);
+        var seconde=parseInt(num/1000);
+        show[0].innerHTML=day;
+        show[1].innerHTML=hour;
+        show[2].innerHTML=minute;
+        show[3].innerHTML=seconde;
+    },100)
+            
+</script>
+</html>
