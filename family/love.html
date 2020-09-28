@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" />
+    <link rel="shortcut icon" href="./img/cui.jpg">
+    <title>LOVE</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+        font-size: .48rem;
+    }
+    
+    body {
+        background-repeat: repeat-y;
+        background-size: 100%;
+        /* background-image: url(./img/p0.jpg); */
+    }
+    
+    .divWrap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .index {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* background-color: #e6e6e6; */
+        transition: left .5s;
+        padding: 0 .4rem;
+        box-sizing: border-box;
+    }
+    
+    .index>div,
+    .detail>div {
+        width: calc( 100% - .8rem);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .detail>div {
+        background-color: #fff;
+        padding: .4rem 0;
+        border-radius: .1rem;
+        min-height: 4rem;
+    }
+    
+    .index>div>div {
+        padding: .2rem;
+        margin-top: .2rem;
+        background-color: #fff;
+        border: .02rem solid #000;
+        border-radius: .1rem;
+        text-align: center;
+    }
+    
+    #parent {
+        padding: 0;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        border: none
+    }
+    
+    #birthday_mom,
+    #birthday_dad {
+        flex: 1;
+        padding: .2rem;
+        margin-top: .2rem;
+        background-color: #fff;
+        border: .02rem solid #000;
+        border-radius: .1rem;
+        text-align: center;
+    }
+    
+    #birthday_mom {
+        margin-right: .1rem;
+    }
+    
+    #birthday_dad {
+        margin-left: .1rem;
+    }
+    
+    .detail {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        /* background-color: #fff; */
+        transition: left .5s;
+    }
+    
+    #title {
+        font-size: .4rem;
+        font-weight: 100;
+    }
+    
+    #deal h2 {
+        font-size: .4rem;
+        font-weight: 100;
+    }
+    
+    #deal h2 span {
+        font-size: .28rem;
+    }
+    
+    #rightDay {
+        /* display: none; */
+    }
+    
+    #timeWrap {
+        font-size: .4rem;
+        margin-top: .2rem;
+    }
+    
+    #timeWrap.active {
+        padding-top: 1rem;
+        height: 2.3rem;
+    }
+    
+    #timeWrap span {
+        display: inline-block;
+        min-width: .6rem;
+        height: .6rem;
+        line-height: .6rem;
+        background-color: #000;
+        color: #fff;
+        border-radius: .14rem;
+        padding: 0 .1rem;
+    }
+    
+    #deal h2 {
+        margin-top: .2rem;
+    }
+    
+    .return {
+        background-color: #000;
+        color: #fff;
+        width: 3rem;
+        height: .8rem;
+        line-height: .8rem;
+        margin: .2rem auto 0;
+        border-radius: .1rem;
+        font-size: .4rem;
+    }
+</style>
+
+<body>
+    <div class="divWrap">
+        <div class="index">
+            <div>
+                <div id="marryDay">结婚纪念日</div>
+                <div id="meetDAY">相识</div>
+                <div id="parent">
+                    <div id="birthday_mom">妈妈</div>
+                    <div id="birthday_dad">爸爸</div>
+                </div>
+                <div id="birthday_kid">宝贝</div>
+                <div id='schoolDay'>距离宝贝开学</div>
+            </div>
+        </div>
+        <div class="detail">
+            <div>
+                <h1 id="title"></h1>
+                <div id='show'>
+                    <div id='timeWrap'>
+                        <span>00</span>天
+                        <span>00</span>小时
+                        <span>00</span>分
+                        <span>00</span>秒
+                    </div>
+                    <div id="deal">
+                        <h2>距离银婚还有</h2>
+                        <h2>距离金婚还有</h2>
+                    </div>
+                    <div id="rightDay"></div>
+                    <div id="testDay"></div>
+                </div>
+                <div class="return">返回</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    //rem布局
+    (window.onload = function() {
+        window.onresize = function() {
+            initFont();
+        };
+
+        function initFont() {
+            var htmlWidth = document.body.clientWidth;
+            if (htmlWidth >= 750) {
+                document.documentElement.style.fontSize = 100 + 'px';
+            } else {
+                document.documentElement.style.fontSize = 100 / 750 * htmlWidth + 'px';
+            }
+        }
+        initFont();
+    })();
+
+    document.body.style.backgroundImage = "url('./img/p" + parseInt(Math.random() * 4) + ".jpg')";
+    var types = {
+            'cui': {
+                meetDAY: {
+                    date: '2012/11/29',
+                    text: '你和（他/她）已经相识',
+                    type: 'add'
+                },
+                marryDay: {
+                    date: "2014/12/01",
+                    data_silver: '2039/12/01',
+                    data_gold: '2064/12/01',
+                    text: '下一个结婚纪念日（12/01）',
+                    right: '今天是你们的结婚纪念日'
+                },
+                schoolDay: {
+                    date: '2022/09/01',
+                    // date: '2020/10/01',
+                    text: '距哈哈宝贝开学还有',
+                    right: '今天是宝贝开学第一天！！',
+                    type: 'add'
+                },
+                birthday_mom: {
+                    date: '1986/01/08',
+                    text: '距柴妈妈生日（01/08）还有',
+                    right: '今天是妈妈生日哦~'
+                },
+                birthday_dad: {
+                    date: '1985/06/02',
+                    text: '距崔爸爸生日（06/02）还有',
+                    right: '今天是爸爸生日哦'
+                },
+                birthday_kid: {
+                    date: '2016/07/20',
+                    testDay: '2035/06/07',
+                    text: '距哈哈宝贝生日（07/20）还有',
+                    right: '今天是你们的宝贝生日'
+                },
+            },
+            'chai': {
+                meetDAY: {
+                    date: '2011/06/01',
+                    text: '你和（他/她）已经相识',
+                    type: 'add'
+                },
+                marryDay: {
+                    date: "2019/02/23",
+                    data_silver: '2044/02/23',
+                    data_gold: '2069/02/23',
+                    text: '下一个结婚纪念日（02/23）',
+                    right: '今天是你们的结婚纪念日'
+                },
+                schoolDay: {
+                    date: '2026/09/01',
+                    text: '距皮皮宝贝开学还有',
+                    right: '今天是宝贝开学第一天！！',
+                    type: 'add'
+                },
+                birthday_mom: {
+                    date: '1992/05/21',
+                    text: '距管妈妈生日（05/21）还有',
+                    right: '今天是妈妈生日哦~'
+                },
+                birthday_dad: {
+                    date: '1993/01/13',
+                    text: '距柴爸爸生日（01/13）还有',
+                    right: '今天是爸爸生日哦'
+                },
+                birthday_kid: {
+                    date: '2019/12/21',
+                    testDay: '2035/06/07',
+                    text: '距皮皮宝贝生日（12/21）还有',
+                    right: '今天是你们的宝贝生日'
+                },
+            },
+            'li': {}
+        },
+        timer = null;
+    let index = document.getElementsByClassName('index')[0];
+    let detail = document.getElementsByClassName('detail')[0];
+    let back = document.getElementsByClassName('return')[0];
+
+    var rightDay = document.getElementById("rightDay");
+    var timeSpan = document.getElementById("timeWrap").getElementsByTagName("span");
+    var title = document.getElementById("title");
+    // 首页点击
+    index.onclick = function(event) {
+        let evt = window.event || event
+        let target = evt.target || evt.srcElement;
+        console.dir(target.id)
+        if (!target.id) return;
+        index.style.left = '-100%';
+        detail.style.left = '0';
+        var data = types[getQueryVariable('t') || 'cui'][target.id];
+        console.log(data);
+        rightDay.style.display = 'none';
+        document.getElementById("deal").style.display = 'none';
+
+        document.getElementById("timeWrap").style.display = 'block';
+        document.getElementById("timeWrap").className = target.id !== 'marryDay' ? 'active' : "";
+        initTimer(data)
+    };
+    // 返回
+    back.onclick = function(event) {
+        index.style.left = '0';
+        detail.style.left = '100%';
+        clearInterval(timer);
+        timeSpan[0].innerHTML = "00";
+        timeSpan[1].innerHTML = "00";
+        timeSpan[2].innerHTML = "00";
+        timeSpan[3].innerHTML = "00";
+        document.getElementById("deal").display = 'none';
+    };
+    // 获取url参数
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) {
+                return pair[1];
+            }
+        }
+        return (false);
+    }
+    //初始化
+    function initTimer(data) {
+        title.innerHTML = data.text;
+        if (data.data_gold) {
+            document.getElementById("deal").style.display = 'block';
+            document.getElementById("deal").getElementsByTagName("h2")[0].innerHTML = '距离银婚<span>（' + formatDate(new Date(data.data_silver)) + '）</span><br>还有' + diffDate(data.data_silver);
+            document.getElementById("deal").getElementsByTagName("h2")[1].innerHTML = '距离金婚<span>（' + formatDate(new Date(data.data_gold)) + '）</span><br>还有' + diffDate(data.data_gold);
+        }
+        timer = setInterval(function() {
+            var timeing = new Date();
+            var currentYear = new Date().getFullYear();
+            var time = new Date(data.date);
+            if (!data.type) {
+                time.setFullYear(currentYear);
+                if (time < timeing && ((timeing - time) > 24 * 60 * 60 * 1000)) {
+                    time.setFullYear(currentYear + 1)
+                }
+            }
+            num = Math.abs(time.getTime() - timeing.getTime());
+            if (num <= 24 * 60 * 60 * 1000 && (time.getDate() == timeing.getDate())) {
+                clearInterval(timer);
+                rightDay.style.display = 'block';
+                document.getElementById("timeWrap").style.display = 'none';
+                rightDay.innerHTML = data.right;
+                return
+            }
+            var day = parseInt(num / (24 * 60 * 60 * 1000));
+            num = num % (24 * 60 * 60 * 1000);
+            var hour = parseInt(num / (60 * 60 * 1000));
+            num = num % (60 * 60 * 1000);
+            var minute = parseInt(num / (60 * 1000));
+            num = num % (60 * 1000);
+            var seconde = parseInt(num / 1000);
+            timeSpan[0].innerHTML = day;
+            timeSpan[1].innerHTML = add0(hour);
+            timeSpan[2].innerHTML = add0(minute);
+            timeSpan[3].innerHTML = add0(seconde);
+        }, 1000)
+
+    }
+    //时间格式化
+    function formatDate(date) {
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        m = m < 10 ? '0' + m : m;
+        var d = date.getDate();
+        d = d < 10 ? ('0' + d) : d;
+        return y + '年' + m + '月' + d + '日';
+    };
+    //加0
+    function add0(m) {
+        return m < 10 ? '0' + m : m
+    }
+    //计算金婚银婚
+    function diffDate(date2, date1) {
+        let begin = date1 ? new Date(date1) : new Date();
+        let end = new Date(date2);
+
+        // 如果开始时间晚于结束时间，交换日期，并记录交换状态
+        let swap = false;
+        if (begin > end) {
+            let tmp = begin;
+            begin = end;
+            end = tmp;
+            swap = true;
+        }
+
+        // 分别取二个日期的年、月、日值
+        let d1 = begin.getDate();
+        let m1 = begin.getMonth() + 1;
+        let y1 = begin.getFullYear();
+        let d2 = end.getDate();
+        let m2 = end.getMonth() + 1;
+        let y2 = end.getFullYear();
+
+        // 获取每个月的天数，这里要注意一下闰年的2月
+        var getMonthDays = function(y, m) {
+            var aMonthDays = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            if (m == 2 && ((y % 400 == 0) || (y % 4 == 0 && y % 100 != 0))) {
+                return 29;
+            }
+            return aMonthDays[m];
+        };
+
+        let y, m, d
+        let tempD = 0
+        let tmpM = 0
+        let tmpY = 0
+
+        // 计算日，不足时向月份借
+        if (d2 >= d1) {
+            d = d2 - d1
+        } else {
+            tmpM = -1
+            d = getMonthDays(y1, m1) + d2 - d1
+        }
+
+        // 计算月，不足时向年份借
+        if (m2 + tmpM >= m1) {
+            m = m2 + tmpM - m1
+        } else {
+            tmpY = -1
+            m = 12 + m2 + tmpM - m1
+        }
+
+        // 计算年
+        y = y2 + tmpY - y1
+
+        // 拼接距离字符串 输出格式如："5天"， "5月 05天"， "5年 05月 05日"
+        let str = "";
+        if (y > 0) {
+            str = y + '年 ' + ("0" + m).substr(-2) + "月 " + ("0" + d).substr(-2) + '天 '
+        } else if (m > 0) {
+            str = m + "月 " + ("0" + d).substr(-2) + '天 '
+        } else if (d > 0) {
+            str = d + '天 '
+        }
+        // 完整输出
+        return str;
+    }
+</script>
+
+</html>
